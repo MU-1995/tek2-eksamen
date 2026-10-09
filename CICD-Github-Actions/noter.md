@@ -40,8 +40,10 @@ mvn -B verify kommandoen kører alt til og med verify.
 1. Forklar en GitHub Actions-fil til at teste Java-kode med Maven
 - maven.yml
 2. Tilføj caching af 3rd-party Maven dependencies
-- maven.yml
+- tilføj cache: maven under actions/setup i maven.yml
 3. Tilføj workflow_dispatch: til et projekt og kør CI manuelt
-- maven.yml
+- tilføj workflow_dispatch: under triggers (on) i maven.yml
 4. Udfør hash-pinning af en enkelt 3rd-party action
-- maven.yml
+    1. find nyeste version -- https://github.com/actions/checkout/releases
+   2. find SHA -- brug git ls-remote https://github.com/actions/checkout "refs/tags/v7.0.1*" i bash
+   3. indsæt SHA ved actions/checkout@ i maven.yml
