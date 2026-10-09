@@ -22,7 +22,9 @@ Cache key er den nøgle GitHub bruger til at identificere cachen — den baseres
 - Samme pom.xml -> brug den gemte cache
 - Ændret pom.xml(ny dependency tilføjet) -> byg cachen om
 ## 6. Hvad er formålet med hash-pinning af ens byggetrin?
+uses: actions/checkout@v4 -- @v4 er et flydende tag. Det kan flyttes til nye eller skadelig commits
 
+uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2 -- en commit-SHA. Kan ikke flyttes. Koden er den samme. Det er mindre læsbart, så #v4.2.2 viser versionen.
 ## 7. Hvilke af Maven's build lifecycle-trin giver mening at køre i CI?
 Validate, compile, test, package, integration-test, verify
 
@@ -42,4 +44,4 @@ mvn -B verify kommandoen kører alt til og med verify.
 3. Tilføj workflow_dispatch: til et projekt og kør CI manuelt
 - maven.yml
 4. Udfør hash-pinning af en enkelt 3rd-party action
-- 
+- maven.yml
