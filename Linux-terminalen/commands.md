@@ -41,5 +41,6 @@ ls -la
 
 chmod 755 minfil.txt
 # /SCP/
+```bash
 scp -i ~/downloads/tek-eks-vm_key.pem minfil.txt azureuser@20.91.143.54:~/
-
+```
