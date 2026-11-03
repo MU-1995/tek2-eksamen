@@ -1,5 +1,7 @@
 # /SSH/
+```bash
 ssh -i ~/downloads/tek-eks-vm_key.pem azureuser@20.91.143.54
+```
 # /Mapper og filer/
 mkdir minmappe
 
