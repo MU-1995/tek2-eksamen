@@ -2,9 +2,10 @@ brug powershell
 # /1/
 Dockerfile
 # /2/
+docker ps -a
+
 docker start tek-demo
 
-docker ps -a
 
 docker stop tek-demo
 
