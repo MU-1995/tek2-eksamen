@@ -1,0 +1,7 @@
+FROM maven:3.9.9-eclipse-temurin-21 AS builder
+COPY . .
+RUN mvn package
+
+FROM eclipse-temurin:21
+COPY --from=builder target/app.jar .
+CMD ["java", "-jar", "app.jar"]
